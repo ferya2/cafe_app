@@ -12,14 +12,14 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColor.whiteGradient,
         automaticallyImplyLeading: false,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.arrow_back_ios_outlined),
-            iconSize: 20,
-          ),
-        ),
+        // leading: Padding(
+        //   padding: const EdgeInsets.only(left: 20),
+        //   child: IconButton(
+        //     onPressed: () {},
+        //     icon: const Icon(Icons.arrow_back_ios_outlined),
+        //     iconSize: 20,
+        //   ),
+        // ),
         title: Text(
           'History',
           style: AppTextStyle.appBarTextStyle,

@@ -19,8 +19,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final screen = [
     const HomePage(),
     const FavoritePage(),
-    const ProfilePage(),
     const HistoryPage(),
+    const ProfilPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -101,7 +101,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           ]
                         : [],
                   ),
-                  child: const Icon(Icons.person_2_outlined, size: 24),
+                  child: const Icon(Icons.history_sharp, size: 24),
                 ),
                 label: '',
               ),
@@ -120,7 +120,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           ]
                         : [],
                   ),
-                  child: const Icon(Icons.history_sharp, size: 24),
+                  child: const Icon(Icons.person_2_outlined, size: 24),
                 ),
                 label: '',
               ),

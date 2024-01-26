@@ -42,6 +42,9 @@ class AppTextStyle {
   static TextStyle appBarTextStyle = GoogleFonts.roboto(
       fontSize: 18, fontWeight: FontWeight.w600, color: AppColor.blackNeutral);
 
+  static TextStyle appBarTextStyle2 = GoogleFonts.roboto(
+      fontSize: 16, fontWeight: FontWeight.w400, color: AppColor.blackNeutral);
+
   static TextStyle nameSubCenter = GoogleFonts.roboto(
       fontSize: 17,
       fontWeight: FontWeight.w400,
