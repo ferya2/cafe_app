@@ -1,5 +1,4 @@
 import 'package:app_rest/constanst/colors/colors.dart';
-import 'package:app_rest/constanst/textstyles/textstyle.dart';
 import 'package:app_rest/view/favorite.dart';
 import 'package:app_rest/view/history.dart';
 import 'package:app_rest/view/home.dart';

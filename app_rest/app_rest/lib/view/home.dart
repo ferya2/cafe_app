@@ -1,5 +1,8 @@
+import 'package:app_rest/constanst/card/card.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
+import 'package:app_rest/view/detail_product.dart';
+import 'package:app_rest/view/result_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -46,7 +49,8 @@ class _HomePageState extends State<HomePage>
                 onPressed: () {},
                 icon: SvgPicture.asset('images/svg/Vector.svg')),
             IconButton(
-                onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined)),
+                onPressed: () {},
+                icon: const Icon(Icons.shopping_cart_outlined)),
           ]),
         ),
         automaticallyImplyLeading: false,
@@ -62,6 +66,12 @@ class _HomePageState extends State<HomePage>
           ),
           const SizedBox(height: 28),
           TextField(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ResultPage();
+              }));
+            },
+            readOnly: true,
             style: AppTextStyle.inputanTextField,
             decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
@@ -112,6 +122,7 @@ class _HomePageState extends State<HomePage>
                 childAspectRatio: 0.58,
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
+
                 crossAxisCount: 2,
                 // Tambahkan padding untuk jarak di sekitar GridView
                 mainAxisSpacing:
@@ -119,7 +130,14 @@ class _HomePageState extends State<HomePage>
                 crossAxisSpacing: 16.0, //
                 children: List.generate(
                   6, // Ganti sesuai dengan jumlah elemen yang Anda inginkan
-                  (index) => buildContainerCard(),
+                  (index) => InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const DetailProductPage();
+                        }));
+                      },
+                      child: buildContainerCard()),
                 ),
               ),
             ],
@@ -129,43 +147,4 @@ class _HomePageState extends State<HomePage>
       )),
     );
   }
-}
-
-Widget buildContainerCard() {
-  return Container(
-    height: 500,
-    width: 200,
-    decoration: BoxDecoration(
-      color: AppColor.whiteNeutral,
-      borderRadius: const BorderRadius.all(
-        Radius.circular(30.0),
-      ),
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        CircleAvatar(
-          backgroundColor: AppColor.greyNeutral.withOpacity(0.3),
-          radius: 64,
-          backgroundImage: const Image(
-            image: AssetImage('images/png/vege.png'),
-            fit: BoxFit.fill,
-          ).image,
-        ),
-        const SizedBox(height: 15),
-        Text(
-          '   Veggie \ntomato mix',
-          style: AppTextStyle.nameProduct,
-          overflow: TextOverflow.clip,
-        ),
-        const SizedBox(
-          height: 14,
-        ),
-        Text('Rp. 60.000', style: AppTextStyle.subtitle2),
-        const SizedBox(
-          height: 24,
-        ),
-      ],
-    ),
-  );
 }
