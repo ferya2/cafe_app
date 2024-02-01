@@ -62,9 +62,10 @@ class _LoginPageState extends State<LoginPage>
                   children: [
                     Image(image: AssetImage('images/png/Logol.png')),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.055,
+                      height: MediaQuery.of(context).size.height * 0.053,
                     ),
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TabBar(
                           controller: _tabController,

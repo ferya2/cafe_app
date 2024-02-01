@@ -52,4 +52,7 @@ class AppTextStyle {
 
   static TextStyle nameTittleCenter = GoogleFonts.roboto(
       fontSize: 28, fontWeight: FontWeight.w600, color: AppColor.blackNeutral);
+
+  static TextStyle priceProduct = GoogleFonts.roboto(
+      fontSize: 20, fontWeight: FontWeight.w600, color: AppColor.primaryColor);
 }
