@@ -99,7 +99,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
               ),
               const SizedBox(height: 4),
               Text(
-                'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm',
+                'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm ',
                 style: AppTextStyle.hintTextField,
               ),
               const SizedBox(height: 24),
