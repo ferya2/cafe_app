@@ -40,7 +40,7 @@ Widget buildContainerCard() {
         const SizedBox(
           height: 14,
         ),
-        Text('Rp. 60.000', style: AppTextStyle.subtitle2),
+        Text('IDR. 30.000', style: AppTextStyle.subtitle2),
         const SizedBox(
           height: 24,
         ),
