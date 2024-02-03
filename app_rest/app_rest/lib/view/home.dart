@@ -1,6 +1,7 @@
 import 'package:app_rest/constanst/card/card.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
+import 'package:app_rest/view/cart.dart';
 import 'package:app_rest/view/detail_product.dart';
 import 'package:app_rest/view/result_search.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,11 @@ class _HomePageState extends State<HomePage>
                 onPressed: () {},
                 icon: SvgPicture.asset('images/svg/Vector.svg')),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const CartPage();
+                  }));
+                },
                 icon: const Icon(Icons.shopping_cart_outlined)),
           ]),
         ),

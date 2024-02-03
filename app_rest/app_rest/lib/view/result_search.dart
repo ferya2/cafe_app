@@ -47,7 +47,7 @@ class ResultPage extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(32),
                       topLeft: Radius.circular(32),
                     ),

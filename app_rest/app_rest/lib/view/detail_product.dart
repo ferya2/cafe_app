@@ -3,6 +3,7 @@ import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
 import 'package:app_rest/view/favorite.dart';
 import 'package:app_rest/view/home.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class DetailProductPage extends StatefulWidget {
@@ -11,6 +12,9 @@ class DetailProductPage extends StatefulWidget {
   @override
   State<DetailProductPage> createState() => _DetailProductPageState();
 }
+
+int _currentImageIndex = 0;
+bool _isFavorite = false;
 
 class _DetailProductPageState extends State<DetailProductPage> {
   @override
@@ -31,8 +35,22 @@ class _DetailProductPageState extends State<DetailProductPage> {
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.favorite_border_outlined),
+              onPressed: () {
+                // Toggle status favorit saat ikon diklik
+                setState(() {
+                  _isFavorite = !_isFavorite;
+                });
+              },
+              icon: Icon(
+                _isFavorite
+                    ? Icons
+                        .favorite_outlined // Jika favorit, tampilkan ikon love berwarna
+                    : Icons
+                        .favorite_border_outlined, // Jika tidak favorit, tampilkan ikon love default
+                color: _isFavorite
+                    ? AppColor.primaryColor // Warna love berwarna favorit
+                    : null, // Warna default ikon love
+              ),
             ),
           )
         ],
@@ -68,28 +86,77 @@ class _DetailProductPageState extends State<DetailProductPage> {
                               blurRadius: 7,
                             )
                           ]),
-                      child: CircleAvatar(
-                        backgroundColor:
-                            AppColor.whiteGradient.withOpacity(0.2),
-                        child: Image(
-                          image: AssetImage('images/png/vege2.png'),
-                          height: MediaQuery.of(context).size.height * 0.25,
-                          color: AppColor.whiteNeutral.withOpacity(1),
-                          colorBlendMode: BlendMode.multiply,
-                          fit: BoxFit.fill,
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                            height: MediaQuery.of(context).size.height * 0.35,
+                            enlargeCenterPage: true,
+                            autoPlay: true,
+                            aspectRatio: 16 / 9,
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            enableInfiniteScroll: true,
+                            autoPlayAnimationDuration:
+                                const Duration(milliseconds: 680),
+                            viewportFraction: 0.9,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                _currentImageIndex = index;
+                              });
+                            }),
+                        items: [
+                          'images/png/vege4.jpg',
+                          'images/png/vege.png',
+                          'images/png/vege5.jpg',
+                        ].map((imagePath) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                width: MediaQuery.of(context).size.width,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(imagePath),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      3, // Jumlah gambar dalam Carousel
+                      (index) => Container(
+                        width: 8.0,
+                        height: 8.0,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 2.0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: _currentImageIndex == index
+                              ? AppColor.primaryColor
+                              : Colors.grey,
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Text('Veggie Tomato Mix',
                       style: AppTextStyle.nameTittleCenter),
                   const SizedBox(
                     height: 10,
                   ),
-                  Text('Rp. 30.000', style: AppTextStyle.priceProduct),
+                  Text('IDR. 30.000', style: AppTextStyle.priceProduct),
                 ],
               ),
               const SizedBox(height: 24),
@@ -125,7 +192,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
-                primary: AppColor.primaryColor,
+                backgroundColor: AppColor.primaryColor,
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
