@@ -1,6 +1,7 @@
 import 'package:app_rest/constanst/bottomnav/bottomnavbar.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
+import 'package:app_rest/view/payment_method.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -166,7 +167,7 @@ class _CartPageState extends State<CartPage> {
                                         Container(
                                           height: 35,
                                           decoration: BoxDecoration(
-                                              color: AppColor.whiteGradient,
+                                              color: AppColor.primaryColor,
                                               borderRadius:
                                                   const BorderRadius.all(
                                                 Radius.circular(20.0),
@@ -178,18 +179,17 @@ class _CartPageState extends State<CartPage> {
                                                   decrementCounter();
                                                 },
                                                 icon: const Icon(Icons.remove),
-                                                color: AppColor.greyNeutral,
+                                                color: AppColor.whiteNeutral,
                                                 iconSize: 18,
                                               ),
                                               Text('$_count',
-                                                  style:
-                                                      AppTextStyle.subtitle2),
+                                                  style: AppTextStyle.cartText),
                                               IconButton(
                                                 onPressed: () {
                                                   incrementCounter();
                                                 },
                                                 icon: const Icon(Icons.add),
-                                                color: AppColor.greyNeutral,
+                                                color: AppColor.whiteNeutral,
                                                 iconSize: 18,
                                               ),
                                             ],
@@ -227,7 +227,7 @@ class _CartPageState extends State<CartPage> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const BottomNavBar();
+                return const PaymentMethodPage();
               }));
             },
             child: Text(

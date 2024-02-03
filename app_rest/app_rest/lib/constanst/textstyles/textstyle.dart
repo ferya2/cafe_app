@@ -60,5 +60,11 @@ class AppTextStyle {
       fontSize: 12, fontWeight: FontWeight.w400, color: AppColor.blackNeutral);
 
   static TextStyle cartText = GoogleFonts.roboto(
-      fontSize: 12, fontWeight: FontWeight.w400, color: AppColor.whiteNeutral);
+      fontSize: 14, fontWeight: FontWeight.w400, color: AppColor.whiteNeutral);
+
+  static TextStyle titlePayment = GoogleFonts.roboto(
+      fontSize: 32, fontWeight: FontWeight.w600, color: AppColor.blackNeutral);
+
+  static TextStyle changeDelivery = GoogleFonts.roboto(
+      fontSize: 14, fontWeight: FontWeight.w600, color: AppColor.primaryColor);
 }

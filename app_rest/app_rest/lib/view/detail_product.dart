@@ -95,16 +95,16 @@ class _DetailProductPageState extends State<DetailProductPage> {
                             autoPlayCurve: Curves.fastOutSlowIn,
                             enableInfiniteScroll: true,
                             autoPlayAnimationDuration:
-                                const Duration(milliseconds: 800),
-                            viewportFraction: 0.8,
+                                const Duration(milliseconds: 680),
+                            viewportFraction: 0.9,
                             onPageChanged: (index, reason) {
                               setState(() {
                                 _currentImageIndex = index;
                               });
                             }),
                         items: [
-                          'images/png/vege.png',
                           'images/png/vege4.jpg',
+                          'images/png/vege.png',
                           'images/png/vege5.jpg',
                         ].map((imagePath) {
                           return Builder(
@@ -192,7 +192,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
-                primary: AppColor.primaryColor,
+                backgroundColor: AppColor.primaryColor,
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
