@@ -1,7 +1,7 @@
 import 'package:app_rest/constanst/bottomnav/bottomnavbar.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/home.dart';
+import 'package:app_rest/view/home/home.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {

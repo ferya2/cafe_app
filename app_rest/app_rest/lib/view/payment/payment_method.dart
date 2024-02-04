@@ -1,106 +1,135 @@
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
-
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/home.dart';
+import 'package:app_rest/view/payment/delivery.dart';
 import 'package:flutter/material.dart';
 
-class DeliveryPage extends StatefulWidget {
-  const DeliveryPage({Key? key}) : super(key: key);
+class PaymentMethodPage extends StatefulWidget {
+  const PaymentMethodPage({Key? key}) : super(key: key);
 
   @override
-  State<DeliveryPage> createState() => _DeliveryPageState();
+  State<PaymentMethodPage> createState() => _PaymentMethodPageState();
 }
 
-class _DeliveryPageState extends State<DeliveryPage> {
+class _PaymentMethodPageState extends State<PaymentMethodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.whiteGradient,
       appBar: AppBar(
         backgroundColor: AppColor.whiteGradient,
         automaticallyImplyLeading: false,
         leading: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined),
+            onPressed: () {},
+            icon: Icon(Icons.arrow_back_ios_new_outlined),
             iconSize: 20,
           ),
         ),
-        title: Text("Checkout", style: AppTextStyle.appBarTextStyle),
+        title: Text(
+          "Checkout",
+          style: AppTextStyle.appBarTextStyle,
+        ),
         centerTitle: true,
         actions: const [],
       ),
+      backgroundColor: AppColor.whiteGradient,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 40, right: 40),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 20,
               ),
-              Text('Delivery', style: AppTextStyle.titlePayment),
-              const SizedBox(
-                height: 16,
+              Text(
+                'Payment',
+                style: AppTextStyle.titlePayment,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text('Address details', style: AppTextStyle.appBarTextStyle),
-                Text(
-                  'change',
-                  style: AppTextStyle.changeDelivery,
-                )
-              ]),
               const SizedBox(
-                height: 16,
+                height: 40,
               ),
+              Text(
+                'Payment Method',
+                style: AppTextStyle.appBarTextStyle,
+              ),
+              const SizedBox(height: 16),
               Container(
-                height: 180,
+                height: 200,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: AppColor.whiteNeutral,
+                    color: AppColor.whiteNeutral.withOpacity(0.8),
                     borderRadius: const BorderRadius.all(
-                      Radius.circular(20.0),
+                      Radius.circular(16.0),
                     )),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 20, right: 20, top: 20, bottom: 20),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Marvis Kprabo',
-                            style: AppTextStyle.appBarTextStyle),
-                        Divider(
-                          color: AppColor.greyNeutral,
-                          thickness: 0.5,
-                          height: 10,
+                child: ListView(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  children: [
+                    ListTile(
+                        leading: Radio(
+                          value: 1,
+                          groupValue: 1,
+                          onChanged: (value) {},
                         ),
-                        const SizedBox(
-                          height: 10,
+                        title: Row(
+                          children: [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: AppColor.primaryColor.withOpacity(0.8),
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  )),
+                              child: Icon(
+                                Icons.credit_card,
+                                color: AppColor.whiteNeutral,
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            Text(
+                              'Card',
+                              style: AppTextStyle.appBarTextStyle2,
+                            ),
+                          ],
+                        )),
+                    const Divider(
+                      thickness: 1,
+                      indent: 70,
+                      endIndent: 25,
+                    ),
+                    ListTile(
+                        leading: Radio(
+                          value: 2,
+                          groupValue: 1,
+                          onChanged: (value) {},
                         ),
-                        Text(
-                            'Km 5 refinery road oppsite republic road, effurun, delta state',
-                            overflow: TextOverflow.clip,
-                            style: AppTextStyle.appBarTextStyle2),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Divider(
-                          color: AppColor.greyNeutral,
-                          thickness: 0.5,
-                          height: 10,
-                        ),
-                        Text('+234 9011039271',
-                            style: AppTextStyle.appBarTextStyle2),
-                      ]),
+                        title: Row(
+                          children: [
+                            Container(
+                              height: 55,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                  color: Colors.purple.withOpacity(0.8),
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  )),
+                              child: Icon(
+                                Icons.account_balance_outlined,
+                                color: AppColor.whiteNeutral,
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            Text(
+                              'Bank Account',
+                              style: AppTextStyle.appBarTextStyle2,
+                            ),
+                          ],
+                        )),
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 26),
               Text(
                 'Delivery Method',
                 style: AppTextStyle.appBarTextStyle,
@@ -155,7 +184,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 88),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -187,7 +216,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const HomePage();
+                return const DeliveryPage();
               }));
             },
             child: Text(

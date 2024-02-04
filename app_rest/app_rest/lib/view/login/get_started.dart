@@ -1,6 +1,6 @@
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/login.dart';
+import 'package:app_rest/view/login/login.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {

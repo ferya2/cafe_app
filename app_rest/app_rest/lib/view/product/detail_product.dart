@@ -1,8 +1,8 @@
 import 'package:app_rest/constanst/bottomnav/bottomnavbar.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/favorite.dart';
-import 'package:app_rest/view/home.dart';
+import 'package:app_rest/view/home/favorite.dart';
+import 'package:app_rest/view/home/home.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 

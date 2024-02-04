@@ -1,9 +1,9 @@
 import 'package:app_rest/constanst/card/card.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/cart.dart';
-import 'package:app_rest/view/detail_product.dart';
-import 'package:app_rest/view/result_search.dart';
+import 'package:app_rest/view/payment/cart.dart';
+import 'package:app_rest/view/product/detail_product.dart';
+import 'package:app_rest/view/product/result_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
