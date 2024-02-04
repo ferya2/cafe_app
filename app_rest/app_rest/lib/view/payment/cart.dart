@@ -1,7 +1,7 @@
 import 'package:app_rest/constanst/bottomnav/bottomnavbar.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
-import 'package:app_rest/view/payment_method.dart';
+import 'package:app_rest/view/payment/payment_method.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

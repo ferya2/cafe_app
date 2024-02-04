@@ -1,4 +1,4 @@
-import 'package:app_rest/view/get_started.dart';
+import 'package:app_rest/view/login/get_started.dart';
 import 'package:flutter/material.dart';
 
 void main() {

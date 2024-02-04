@@ -1,8 +1,8 @@
 import 'package:app_rest/constanst/colors/colors.dart';
-import 'package:app_rest/view/favorite.dart';
-import 'package:app_rest/view/history.dart';
-import 'package:app_rest/view/home.dart';
-import 'package:app_rest/view/profile.dart';
+import 'package:app_rest/view/home/favorite.dart';
+import 'package:app_rest/view/home/history.dart';
+import 'package:app_rest/view/home/home.dart';
+import 'package:app_rest/view/home/profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
