@@ -103,9 +103,11 @@ class _DetailProductPageState extends State<DetailProductPage> {
                               });
                             }),
                         items: [
+                          'images/png/vege7.jpg',
                           'images/png/vege4.jpg',
                           'images/png/vege.png',
                           'images/png/vege5.jpg',
+                          'images/png/vege6.jpg',
                         ].map((imagePath) {
                           return Builder(
                             builder: (BuildContext context) {
@@ -133,7 +135,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
-                      3, // Jumlah gambar dalam Carousel
+                      5, // Jumlah gambar dalam Carousel
                       (index) => Container(
                         width: 8.0,
                         height: 8.0,
