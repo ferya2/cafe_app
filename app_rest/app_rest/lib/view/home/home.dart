@@ -1,5 +1,6 @@
 import 'package:app_rest/constanst/card/card.dart';
 import 'package:app_rest/constanst/colors/colors.dart';
+import 'package:app_rest/constanst/drawer/custom_drawer.dart';
 import 'package:app_rest/constanst/textstyles/textstyle.dart';
 import 'package:app_rest/view/payment/cart.dart';
 import 'package:app_rest/view/product/detail_product.dart';
@@ -36,9 +37,12 @@ class _HomePageState extends State<HomePage>
     super.dispose();
   }
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: AppColor.whiteGradient,
@@ -47,7 +51,9 @@ class _HomePageState extends State<HomePage>
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _scaffoldKey.currentState?.openDrawer();
+                },
                 icon: SvgPicture.asset('images/svg/Vector.svg')),
             IconButton(
                 onPressed: () {
@@ -60,6 +66,7 @@ class _HomePageState extends State<HomePage>
         ),
         automaticallyImplyLeading: false,
       ),
+      drawer: CustomDrawer(),
       backgroundColor: AppColor.whiteGradient,
       body: SingleChildScrollView(
           child: Padding(
